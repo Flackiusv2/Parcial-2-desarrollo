@@ -9,7 +9,7 @@ describe('FormularioDetailComponent', () => {
   let component: FormularioDetailComponent;
   let fixture: ComponentFixture<FormularioDetailComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ FormularioDetailComponent ]
     })
