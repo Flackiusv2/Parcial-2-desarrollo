@@ -2,11 +2,13 @@
 <div class="card" style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">Prompt</h5>
-    <input type="text" class="form-control mb-3" placeholder="Tell me a long joke (at least 150 characters)" >
+    <input type="text" class="form-control mb-3" placeholder="Tell me a long joke (at least 150 characters)" [(ngModel)]="prompt">
     <button class="btn btn-primary" (click)="sendPrompt()">Enviar</button>
   </div>
 </div>
 <div *ngIf="response">
   <h5 class="card-title">Response</h5>
-  <p>{{ response }}</p>
+  <p><strong>Title:</strong> {{ response.title }}</p>
+  <p><strong>Joke:</strong> {{ response.joke }}</p>
+  <p><strong>Rating:</strong> {{ response.rating }}</p>
 </div>
