@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { FormularioModule } from "./formulario/formulario.module";
+import { Formulario } from './formulario/formulario';
+
 
 @Component({
   selector: 'app-root',

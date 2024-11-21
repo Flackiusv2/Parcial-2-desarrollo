@@ -6,7 +6,8 @@ import { environment } from '../../environments/environment.development';
 
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
+
 })
 export class FormularioService {
   private apiUrl = environment.baseUrl;
@@ -16,6 +17,12 @@ export class FormularioService {
   getFormularios(): Observable<Formulario[]> {
     return this.http.get<Formulario[]>(this.apiUrl);
   }
+
+  addFormulario(formulario: Formulario): Observable<Formulario> {
+    return this.http.post<Formulario>(this.apiUrl, formulario);
+  }
+  
+
 
 
 
