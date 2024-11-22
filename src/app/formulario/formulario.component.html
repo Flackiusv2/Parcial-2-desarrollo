@@ -1,0 +1,19 @@
+<h1>Joke's Machine</h1>
+<div class="card">
+  <div class="card-body">
+    <form>
+      <div class="form-group">
+        <label for="gptPrompt">Enter your GPT prompt:</label>
+        <textarea class="form-control" id="gptPrompt" rows="4"></textarea>
+      </div>
+      <button type="button" class="btn btn-primary mt-3" (click)="sendPrompt()">Submit</button>
+    </form>
+  </div>
+</div>
+
+<div *ngIf="response">
+  <h5 class="card-title">Response</h5>
+  <p><strong>Contenido:</strong> {{ response.title }}</p>
+  
+</div>
+<app-response-list [responses]="responses"></app-response-list>

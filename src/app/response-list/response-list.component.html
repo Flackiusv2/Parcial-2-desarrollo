@@ -1,0 +1,17 @@
+<h2>Generated Jokes</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Rating</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let response of responses">
+      <td>{{ response.title }}</td>
+      <td>{{ response.rating }}</td>
+    
+    </tr>
+  </tbody>
+</table>

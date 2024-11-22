@@ -5,10 +5,3 @@ export class Formulario {
     ) {}
   }
   
-  export class FormularioResponse {
-    constructor(
-      public title: string,
-      public joke: string,
-      public rating: string
-    ) {}
-  }
