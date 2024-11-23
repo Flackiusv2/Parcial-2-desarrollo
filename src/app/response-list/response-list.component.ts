@@ -22,7 +22,7 @@ export class ResponseListComponent implements OnInit, DoCheck {
   }
 
   ngDoCheck() {
-    console.log("Cambio chamo")
+
     if (this.responses.length !== this.previousResponsesLength) {
       this.previousResponsesLength = this.responses.length;
       this.calculateMostCommonRating();

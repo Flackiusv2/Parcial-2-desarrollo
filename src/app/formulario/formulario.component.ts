@@ -25,8 +25,8 @@ export class FormularioComponent implements OnInit {
 
   validatePrompt(event: Event): void {
     const input = (event.target as HTMLTextAreaElement).value;
-    this.isPromptValid = input.length >= 150;
-    this.errorMessage = this.isPromptValid ? '' : 'The prompt must be at least 150 characters long.';
+    this.isPromptValid = input.length >= 100;
+    this.errorMessage = this.isPromptValid ? '' : 'The prompt must be at least 100 characters long.';
   }
 
   sendPrompt(): void {
