@@ -8,9 +8,10 @@
         <form>
           <div class="form-group">
             <label for="gptPrompt">Prompt:</label>
-            <textarea class="form-control" id="gptPrompt" rows="4" placeholder="Tell me a long joke (at least 150 characters)"></textarea>
+            <textarea class="form-control" id="gptPrompt" rows="4" placeholder="Tell me a long joke (at least 150 characters)" (input)="validatePrompt($event)"></textarea>
           </div>
-          <button type="button" class="btn btn-primary mt-3" (click)="sendPrompt()">Submit</button>
+          <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+          <button type="button" class="btn btn-primary mt-3" (click)="sendPrompt()" [disabled]="!isPromptValid">Submit</button>
         </form>
       </div>
     </div>

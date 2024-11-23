@@ -18,16 +18,25 @@ export class FormularioComponent implements OnInit {
   response!: FormularioResponse;
   responses: FormularioResponse[] = [];
   selectedResponse!: FormularioResponse;
+  errorMessage: string = '';
+  isPromptValid: boolean = false;
 
   constructor(private forumlarioservice: FormularioService) {}
 
+  validatePrompt(event: Event): void {
+    const input = (event.target as HTMLTextAreaElement).value;
+    this.isPromptValid = input.length >= 150;
+    this.errorMessage = this.isPromptValid ? '' : 'The prompt must be at least 150 characters long.';
+  }
+
   sendPrompt(): void {
-    let prompt = (document.getElementById('gptPrompt') as HTMLTextAreaElement).value;
-    console.log(prompt);
-    this.forumlarioservice.addFormulario(prompt).subscribe(rta => {
-      console.log(rta);
-      this.responses.push(rta);
-    });
+    if (this.isPromptValid) {
+      let prompt = (document.getElementById('gptPrompt') as HTMLTextAreaElement).value;
+      console.log(prompt);
+      this.forumlarioservice.addFormulario(prompt).subscribe(rta => {
+        this.responses.push(rta);
+      });
+    }
   }
 
   onJokeSelected(response: FormularioResponse) {
