@@ -1,0 +1,7 @@
+.card {
+    background-color: #FFF4B7;
+  }
+.card-title {
+    border-bottom: 2px solid black;
+    padding-bottom: 5px; /* Opcional: para agregar un poco de espacio entre el título y la línea */
+}

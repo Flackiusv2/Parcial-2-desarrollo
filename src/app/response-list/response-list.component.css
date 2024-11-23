@@ -1,0 +1,28 @@
+.table {
+    width: 100%;
+    border-spacing: 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    
+  }
+
+th{
+    background-color: transparent;
+    color: #ffffff;
+}
+
+td{
+    background-color: transparent;
+    color: #ffffff;
+}
+.title {
+    color: #FF6500;
+    text-decoration: underline;
+    cursor: pointer
+  }
+  
+.title:hover {
+    color: rgb(87, 93, 209); /* Cambia a rojo cuando el mouse esté encima */
+    text-decoration: none; /* Quita el subrayado cuando el mouse esté encima */
+}

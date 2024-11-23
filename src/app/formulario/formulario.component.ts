@@ -4,18 +4,20 @@ import { CommonModule } from '@angular/common';
 import { FormularioService } from './formulario.service';
 import { FormularioResponse } from './formularioResponse';
 import { ResponseListComponent } from '../response-list/response-list.component';
+import { ResponseDetailComponent } from '../response-detail/response-detail.component';
 
 @Component({
   selector: 'app-formulario',
   templateUrl: 'formulario.component.html',
   styleUrls: ['formulario.component.css'],
   standalone: true,
-  imports: [FormsModule, CommonModule, ResponseListComponent]
+  imports: [FormsModule, CommonModule, ResponseListComponent, ResponseDetailComponent]
 })
 export class FormularioComponent implements OnInit {
   prompt: string = '';
   response!: FormularioResponse;
   responses: FormularioResponse[] = [];
+  selectedResponse!: FormularioResponse;
 
   constructor(private forumlarioservice: FormularioService) {}
 
@@ -25,9 +27,12 @@ export class FormularioComponent implements OnInit {
     this.forumlarioservice.addFormulario(prompt).subscribe(rta => {
       console.log(rta);
       this.responses.push(rta);
-  });
+    });
   }
 
+  onJokeSelected(response: FormularioResponse) {
+    this.selectedResponse = response;
+  }
 
   ngOnInit() {}
 }

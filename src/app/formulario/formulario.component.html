@@ -1,19 +1,22 @@
-<h1>Joke's Machine</h1>
-<div class="card">
-  <div class="card-body">
-    <form>
-      <div class="form-group">
-        <label for="gptPrompt">Enter your GPT prompt:</label>
-        <textarea class="form-control" id="gptPrompt" rows="4"></textarea>
+<nav class="navbar">
+  <h1 class="title">Joke's Machine</h1>
+</nav>
+<div class="container">
+  <div class="left">
+    <div class="card">
+      <div class="card-body">
+        <form>
+          <div class="form-group">
+            <label for="gptPrompt">Prompt:</label>
+            <textarea class="form-control" id="gptPrompt" rows="4" placeholder="Tell me a long joke (at least 150 characters)"></textarea>
+          </div>
+          <button type="button" class="btn btn-primary mt-3" (click)="sendPrompt()">Submit</button>
+        </form>
       </div>
-      <button type="button" class="btn btn-primary mt-3" (click)="sendPrompt()">Submit</button>
-    </form>
-  </div>
+    </div>
+  </div>
+  <div class="right">
+    <app-response-list [responses]="responses" (jokeSelected)="onJokeSelected($event)"></app-response-list>
+    <app-response-detail [response]="selectedResponse"></app-response-detail>
+  </div>
 </div>
-
-<div *ngIf="response">
-  <h5 class="card-title">Response</h5>
-  <p><strong>Contenido:</strong> {{ response.title }}</p>
-  
-</div>
-<app-response-list [responses]="responses"></app-response-list>
