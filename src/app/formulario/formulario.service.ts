@@ -17,7 +17,7 @@ export class FormularioService {
   addFormulario(prompt: string): Observable<FormularioResponse> {
     const body = {
       prompt: prompt,
-      format: "The format for the response has three keys: ('title','joke', and 'rating'): 'title' is just a short title for the joke with less than 50 characters; 'joke' contains the actual joke; and 'rating' has a rating for the joke, similar to the ratings used for movies."
+      format: "The format for the response has three keys: ('title','content', and 'rating'): 'title' is just a short title for the content with less than 50 characters; 'content' contains the actual joke; "
     };
     return this.http.post<{ response: string }>(this.apiUrl, body).pipe(
       map(res => JSON.parse(res.response))

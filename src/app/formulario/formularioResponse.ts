@@ -1,11 +1,11 @@
 export class FormularioResponse {
     joke: string;
-    title: string;
+    content: string;
     rating: number;
 
-    constructor(joke: string, title: string, rating: number) {
+    constructor(joke: string, content: string, rating: number) {
         this.joke = joke;
-        this.title = title;
+        this.content = title;
         this.rating = rating;
     }
 }
